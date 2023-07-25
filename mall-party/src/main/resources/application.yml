@@ -1,0 +1,18 @@
+server:
+  port: 1000
+spring:
+  application:
+    name: partyservice
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alicloud:
+      oss:
+        bucket: mall-ljzhang-zian
+        endpoint: oss-cn-chengdu.aliyuncs.com
+      access-key: LTAI5tJ6zUqrbFzDuZEQQzyU
+      secret-key: m3PWLgvhq1mp77IQXadWoNceUBIXNJ
+
+
+

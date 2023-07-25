@@ -1,0 +1,40 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: productservice
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alicloud:
+      oss:
+        endpoint: oss-cn-chengdu.aliyuncs.com
+      access-key: LTAI5tJ6zUqrbFzDuZEQQzyU
+      secret-key: m3PWLgvhq1mp77IQXadWoNceUBIXNJ
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://8.130.11.220:3306/mall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: ljzhang
+      password: 200251
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #mybatis-plus的日志开启配置，不能使用mybatis的，会找不到
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: flag # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+

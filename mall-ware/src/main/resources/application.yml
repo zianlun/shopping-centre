@@ -1,0 +1,26 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: wareservice
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://8.130.11.220:3306/mall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: ljzhang
+      password: 200251
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
